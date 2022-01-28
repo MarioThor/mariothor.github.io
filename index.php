@@ -30,7 +30,7 @@
         <div class="main">
             <h1 id="hp">hp</h1>
             <p>de vida restante</p>
-            <button onclick="lose_hp(5)">Quitar vida</button>
+            <button onclick="add_user('ASDFDS','CONTRASEÑA')">Quitar vida</button>
         </div>
         <script id="HPScript">
             var hp = 100;
@@ -41,6 +41,12 @@
                 document.getElementById("hp").innerHTML = "HP: " + hp;
             }
         </script>
-        
+        <?php
+            function add_user($username, $password){
+                $myfile = fopen("users.txt","w") or die("Unable to open file");
+                fwrite($myfile, $username + "\n" + $password + "\n");
+                fclose($myfile);
+            }
+        ?>
     </body>
 </html>
