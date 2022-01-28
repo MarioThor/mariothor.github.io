@@ -3,6 +3,15 @@
     <head>
         <title>1</title>
         <style>
+            *{
+                box-sizing: border-box;
+            }
+
+            html{
+                width: 100%;
+                height: 100%;
+            }
+
             body{
                 width: 100%;
                 height: 100%;
@@ -13,14 +22,24 @@
                 text-align: center;
                 width: 600px;
                 height: 400px;
-                margin: 0 auto;
+                margin: auto;
             }
         </style>
     </head>
     <body >
         <div class="main">
-            <h1>Big ass title</h1>
-            <p>smol text</p>
+            <h1 id="hp">hp</h1>
+            <p>de vida restante</p>
+            <button onclick="lose_hp(5)">Quitar vida</button>
         </div>
+        <script id="HPScript">
+            var hp = 100;
+            document.getElementById("hp").innerHTML = "HP: " + hp;
+
+            function lose_hp(amount){
+                hp -= amount;
+                document.getElementById("hp").innerHTML = "HP: " + hp;
+            }
+        </script>
     </body>
 </html>
