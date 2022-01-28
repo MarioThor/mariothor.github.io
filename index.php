@@ -28,25 +28,16 @@
     </head>
     <body >
         <div class="main">
-            <h1 id="hp">hp</h1>
-            <p>de vida restante</p>
-            <button onclick="add_user('ASDFDS','CONTRASEÑA')">Quitar vida</button>
+            <form action="userstorage.php" method="post">
+                <input type="text" name="username">
+                <input type="password" name="password">
+                <input type="submit" value="Submit">
+            </form>
         </div>
-        <script id="HPScript">
-            var hp = 100;
-            document.getElementById("hp").innerHTML = "HP: " + hp;
-
-            function lose_hp(amount){
-                hp -= amount;
-                document.getElementById("hp").innerHTML = "HP: " + hp;
+        <script id="Main_Script">
+            function add_user_js(username, password){
+                add_user(username, password);
             }
         </script>
-        <?php
-            function add_user($username, $password){
-                $myfile = fopen("users.txt","w") or die("Unable to open file");
-                fwrite($myfile, $username + "\n" + $password + "\n");
-                fclose($myfile);
-            }
-        ?>
     </body>
 </html>
