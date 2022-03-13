@@ -1,0 +1,13 @@
+body{
+    background-color: bisque;
+}
+
+h1{
+    text-align: center;
+    background-color: brown;
+}
+div.main_container{
+    margin: 0 auto;
+    width: 400px; height: 600px;
+    background-color: coral;
+}
